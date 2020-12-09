@@ -10,23 +10,14 @@ function chunk (array,number){
   
     const  splitElement = () =>  array.map(element => element.split(""));
 
-    const  sliceElementFirstElement = () =>  {
-        const newArrayWithSplittedValue = splitElement();
-        return newArrayWithSplittedValue.slice(0,number);
-    }
-
-    const sliceElementSecondElement = () => {
-        const newArrayWithSplittedValue = splitElement();
-        return  newArrayWithSplittedValue.slice(number);
-    }
+    const  sliceElementFirstElement = () =>  splitElement().slice(0,number);
+    const sliceElementSecondElement = () => splitElement().slice(number);
 
     const joinElementOne= () =>   sliceElementFirstElement().join("");
     const joinElementTwo = () => sliceElementSecondElement().join('');
   
-
     const resplitedElementOne = () => joinElementOne().split("");
     const resplitedElementTwo = () => joinElementTwo().split("")
-
 
     newArray.push(resplitedElementOne());
     newArray.push(resplitedElementTwo());
